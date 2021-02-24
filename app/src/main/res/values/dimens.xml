@@ -1,0 +1,13 @@
+<resources>
+    <!-- ボタン -->
+    <dimen name="button_margin">16dp</dimen>
+    <dimen name="back_bottom_margin">90dp</dimen>
+    <!-- コンテンツ -->
+    <dimen name="contents_size">16dp</dimen>
+    <!-- 更新日時 -->
+    <dimen name="update_at_size">12dp</dimen>
+    <!-- アイテム -->
+    <dimen name="item_radius">5dp</dimen>
+    <dimen name="item_stroke">1dp</dimen>
+    <dimen name="item_margin">6dp</dimen>
+</resources>

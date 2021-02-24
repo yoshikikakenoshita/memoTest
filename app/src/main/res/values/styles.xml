@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 戻るボタン -->
+    <style name="backButton" parent="Widget.Design.FloatingActionButton">
+        <item name="android:layout_gravity">bottom|end</item>
+        <item name="android:layout_marginBottom">@dimen/back_bottom_margin</item>
+        <item name="android:layout_marginEnd">@dimen/button_margin</item>
+        <item name="backgroundTint">@color/back_button_bg</item>
+        <item name="tint">@color/back_button_tint</item>
+        <item name="rippleColor">@color/back_button_ripple</item>
+    </style>
+    <!-- アクションボタン -->
+    <style name="actionButton" parent="Widget.Design.FloatingActionButton">
+        <item name="android:layout_gravity">bottom|end</item>
+        <item name="android:layout_marginBottom">@dimen/button_margin</item>
+        <item name="android:layout_marginEnd">@dimen/button_margin</item>
+        <item name="backgroundTint">@color/action_button_bg</item>
+        <item name="tint">@color/action_button_tint</item>
+        <item name="rippleColor">@color/action_button_ripple</item>
+    </style>
+    <!-- フラグメント -->
+    <style name="layoutBg">
+        <item name="android:padding">@dimen/item_margin</item>
+        <item name="android:background">color/fragment_bg</item>
+    </style>
+
+    <!-- アイテム -->
+    <style name="itemBg">
+        <item name="android:layout_marginBottom">@dimen/item_margin</item>
+        <item name="android:padding">@dimen/item_margin</item>
+        <item name="android:background">@drawable/item_base</item>
+    </style>
+
+    <!-- コンテンツ -->
+    <style name="contents">
+        <item name="android:textSize">@dimen/contents_size</item>
+        <item name="android:textColor">@color/contents_text</item>
+    </style>
+
+    <!-- 更新日時 -->
+    <style name="updateAt">
+        <item name="android:textSize">@dimen/update_at_size</item>
+        <item name="android:textColor">@color/update_at_text</item>
+    </style>
+
+    <!-- テキスト -->
+    <style name="editText" parent="Widget.AppCompat.EditText">
+        <item name="android:padding">@dimen/item_margin</item>
+        <item name="android:background">@drawable/item_base</item>
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:maxLines">30</item>
+        <item name="colorControlNormal">@color/edit_control</item>
+        <item name="colorControlActivated">@color/edit_control_active</item>
+        <item name="android:textCursorDrawable">@color/edit_cursor</item>
+        <item name="android:textColor">@color/edit_text</item>
+        <item name="android:textColorHint">@color/edit_text_hint</item>
+        <item name="android:textColorHighlight">@color/edit_hint_light</item>
+    </style>
+
+</resources>

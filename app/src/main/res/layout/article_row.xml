@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/row_base"
+    style="@style/itemBg"
+    >
+
+    <TextView
+        android:id="@+id/article_content"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        style="@style/contents" />
+
+    <TextView
+        android:id="@+id/article_update_at"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        style="@style/updateAt" />
+
+</LinearLayout>
