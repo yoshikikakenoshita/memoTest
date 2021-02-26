@@ -1,17 +1,26 @@
-package com.example.memo
+package com.example.memo.view
 
+import android.content.Context
 import android.os.Bundle
+import android.view.InputDevice
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
+import android.widget.EditText
 import androidx.navigation.fragment.findNavController
+import com.example.memo.R
+import com.example.memo.db.ArticleData
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 class SecondFragment : Fragment() {
+
+    private lateinit var inputText: EditText
+    private var currentId:Long? = null
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -23,9 +32,27 @@ class SecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        inputText = view.findViewById(R.id.inputText)
 
-        view.findViewById<Button>(R.id.button_second).setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+        currentId = this.arguments?.getLong(MainActivity.SELECT_ID)
+        if (currentId != null) {
+            inputText.setText(this.arguments?.getString(MainActivity.SELECT_CONTENTS))
+        } else {
+            inputText.setText("")
+        }
+    }
+
+    fun getArticleData():ArticleData? {
+        val text = inputText.text.toString()
+
+        return if(text.isNotEmpty()) { ArticleData(currentId, text) } else { null }
+    }
+
+    fun closeKeyboard() {
+        val view = activity?.currentFocus
+        if(view != null) {
+            val manager = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+        manager?.hideSoftInputFromWindow(view.windowToken, 0)
         }
     }
 }
